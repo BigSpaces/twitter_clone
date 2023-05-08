@@ -4,7 +4,7 @@ defmodule Storage.StorageServer do
   # Client API
 
   def start_link(opts) do
-    GenServer.start_link(__MODULE__, :ok, opts)
+    GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
   def get_tweets(user_id) do
