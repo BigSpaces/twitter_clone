@@ -1,0 +1,12 @@
+<div class="tweet">
+    <div class="tweet-header">
+        <span class="username">#{tweet["username"]}</span>
+        <span class="timestamp">#{DateTime.to_string(tweet["timestamp"])}</span>
+    </div>
+    <div class="tweet-content">
+        #{tweet["content"]}
+    </div>
+    <div class="tweet-footer">
+        <span class="likes">#{tweet["likes"]} likes</span>
+    </div>
+</div>
