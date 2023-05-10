@@ -11,7 +11,19 @@ This endpoint is the main entry-point into the app.
 It should:
 
 1. Find the least-loaded Web service
-2. Redirect the user's brower to it
+2. Redirect the user's browser to it
+
+#### `/register`
+
+This endpoint registers other microservices.
+
+It should
+
+1. Receive a Json in a post request with a payload that stores the name of the service and the url. Example: " %{"web" => "http://localhost:4010"}"
+2. Store it in an internal database (to be implemented)
+
+
+
 
 ### Web
 

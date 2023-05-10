@@ -8,6 +8,7 @@ defmodule Meta.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {Meta.MetaServer, %{}},
       {Plug.Cowboy, scheme: :http, plug: Meta.Router, options: [port: 4001]}
       # Starts a worker by calling: Meta.Worker.start_link(arg)
       # {Meta.Worker, arg}
@@ -15,7 +16,7 @@ defmodule Meta.Application do
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Meta.Supervisor]
+    opts = [strategy: :one_for_one] #, name: Meta.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
